@@ -19,13 +19,26 @@
     }   
 
     .Item:hover{
-        background-color: #E9E9E9;
+        background-color: #D6D6D6;
         box-shadow: 4px 4px 8px rgba(163, 177, 198, 0.8), -4px -4px 8px rgba(255, 255, 255, 0.7);
     }
 
     .Item form{
         margin: 0;
+
     }
+
+    .Item button{
+        border: none;
+        background-color: #0cc6a111;
+        cursor: pointer;
+        margin: 0.5rem;
+        padding: 0.25rem;
+        border-radius: 0.5rem;
+        box-shadow: 0.2rem 0.2rem 0.4rem rgba(163, 177, 198, 0.6), -0.2rem -0.2rem 0.4rem rgba(255, 255, 255, 0.5);
+        width: 2rem;
+        height: 2rem;
+    }   
     
     .todo_wrapper {
     display: flex;
@@ -36,9 +49,10 @@
     }
     
     .ongoing, .done {
+    margin: 1rem;
     width: 40%;
     padding: 0.5%;
-    background-color: #e0e0e0;
+    background-color: #D0D0D0;
     padding: 3%;
     border-radius: 15px;
     border: none;
@@ -47,8 +61,6 @@
     
 
     .delete, .checkmark {
-    width: 1.25rem;
-    height: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +70,7 @@
     background-color: transparent;
     }
 
-    .delete:hover {
+    .delete svg:hover {
         fill: #C60C30;
         cursor: pointer;
     }
@@ -70,7 +82,7 @@
 
 
     
-    .checkmark:hover {
+    .checkmark svg:hover {
         fill: #0CC6A2;
         cursor: pointer;
     }
@@ -89,9 +101,10 @@
             margin: 0;
             border: none;
             background-color: transparent;
+            margin: 0.5rem;
             }
         
-            .AddItem:hover {
+            .AddItem svg:hover {
                 fill: #0CC6A2;
             }
         
@@ -108,7 +121,7 @@
             background-color: transparent;
             font-size: 1.5rem;
             font-weight: 500;
-            color: #000000;
+            color: #2D2D2D;
             outline: none;
         }
 
@@ -124,4 +137,32 @@
         width: 100%;
         height: 100%;
         margin: 0;
+        }
+
+        svg {
+            position: relative;
+            z-index: 1;
+            fill: currentColor;
+        }
+
+        h1{
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2D2D2D;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2{
+            font-size: 1.5rem;
+            font-weight: 550;
+            color: #2D2D2D;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: #C4C4C4;
+            margin: 0;
+            padding: 0;
         }

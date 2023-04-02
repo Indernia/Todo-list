@@ -11,7 +11,7 @@
         <div class="ongoing">
             <h1>Welcome to this TODO site</h1>
             <div>
-                <p>Here you can add your TODOs</p>
+                <h2>Here you can add your TODOs</h2>
                 <form action="/add_todo" method="POST" class="InForms">
                     <input type="text" name="todo" placeholder="Enter your TODO" class="ToInput">
                     <button type="submit" value="Add" class="AddItem"> 
@@ -49,13 +49,22 @@
         <div class="done">
                 <H1>Here are all the tasks you have completed</H1>
                 {% for i in done %}
-                        <li class="Item">{{i}} 
+                        <li class="Item">
+                            <p>{{i}}</p> 
                             <form action="/delete_todo_name" method="POST">
                                 <input type="hidden" name="todo_text" value="{{i}}">
                                 <button type="submit" value="Delete" class="delete"> 
                                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="trash">
                                             <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/>
                                         </svg>
+                                </button>
+                            </form>
+                            <form action="/uncompleted" method="POST">
+                                <input type="hidden" name="uncompleted" value="{{i}}">
+                                <button type="submit" value="uncompleted" class="additem"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                                        <path d="M180 1044q-24 0-42-18t-18-42V384q0-24 18-42t42-18h405l-60 60H180v600h600V636l60-60v408q0 24-18 42t-42 18H180Zm300-360Zm182-352 43 42-285 284v86h85l286-286 42 42-303 304H360V634l302-302Zm171 168L662 332l100-100q17-17 42.311-17T847 233l84 85q17 18 17 42.472T930 402l-97 98Z"/>
+                                    </svg>
                                 </button>
                             </form>
                         </li>

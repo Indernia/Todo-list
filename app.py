@@ -63,3 +63,13 @@ def completed():
     todo.completed = True
     db.session.commit()
     return redirect('/')
+
+
+@app.route('/uncompleted', methods=['POST'])
+def uncompleted():
+    title = request.form.get('uncompleted')
+    print(title)
+    todo = Todo.query.filter_by(title=title).first()
+    todo.completed = False
+    db.session.commit()
+    return redirect('/')
