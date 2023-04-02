@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="todo_wrapper">
+        <div class="ongoing">
+            <h1>Welcome to this TODO site</h1>
+            <div>
+                <p>Here you can add your TODOs</p>
+                <form action="/add_todo" method="POST" class="InForms">
+                    <input type="text" name="todo" placeholder="Enter your TODO" class="ToInput">
+                    <button type="submit" value="Add" class="AddItem"> 
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                            <path d="M180 1044q-24 0-42-18t-18-42V384q0-24 18-42t42-18h405l-60 60H180v600h600V636l60-60v408q0 24-18 42t-42 18H180Zm300-360Zm182-352 43 42-285 284v86h85l286-286 42 42-303 304H360V634l302-302Zm171 168L662 332l100-100q17-17 42.311-17T847 233l84 85q17 18 17 42.472T930 402l-97 98Z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <ul>
+                    {% for title in titles %}
+                        <li class="Item"><p>{{ title }}</p> 
+                            <form action="/delete_todo_name" method="POST">
+                                <input type="hidden" name="todo_text" value="{{title}}">
+                                <button type="submit" value="Delete" class="delete"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="trash">
+                                        <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/>
+                                    </svg>
+                            </button>
+                            </form>
+                            <form action="/completed" method="POST">
+                                <input type="hidden" name="completed" value="{{title}}">
+                                <button type="submit" value="Done" class="Checkmark"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+                                        <path d="M480 976q-85 0-158-30.5T195 861q-54-54-84.5-127T80 576q0-84 30.5-157T195 292q54-54 127-85t158-31q75 0 140 24t117 66l-43 43q-44-35-98-54t-116-19q-145 0-242.5 97.5T140 576q0 145 97.5 242.5T480 916q145 0 242.5-97.5T820 576q0-30-4.5-58.5T802 462l46-46q16 37 24 77t8 83q0 85-31 158t-85 127q-54 54-127 84.5T480 976Zm-59-218L256 592l45-45 120 120 414-414 46 45-460 460Z"/>
+                                    </svg>
+                            </button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="done">
+                <H1>Here are all the tasks you have completed</H1>
+                {% for i in done %}
+                        <li class="Item">{{i}} 
+                            <form action="/delete_todo_name" method="POST">
+                                <input type="hidden" name="todo_text" value="{{i}}">
+                                <button type="submit" value="Delete" class="delete"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48" class="trash">
+                                            <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z"/>
+                                        </svg>
+                                </button>
+                            </form>
+                        </li>
+                {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+.Item {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 8px 8px 16px rgba(163, 177, 198, 0.6), -8px -8px 16px rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: last baseline;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #5D958A;
+    outline: none;
+    cursor: default;
+    }   
+
+    .Item:hover{
+        background-color: #E9E9E9;
+        box-shadow: 4px 4px 8px rgba(163, 177, 198, 0.8), -4px -4px 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .Item form{
+        margin: 0;
+    }
+    
+    .todo_wrapper {
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .ongoing, .done {
+    width: 40%;
+    padding: 0.5%;
+    background-color: #e0e0e0;
+    padding: 3%;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 8px 8px 16px rgba(163, 177, 198, 0.6), -8px -8px 16px rgba(255, 255, 255, 0.5);
+    }
+    
+
+    .delete, .checkmark {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0.5rem;
+    border: none;
+    background-color: transparent;
+    }
+
+    .delete:hover {
+        fill: #C60C30;
+        cursor: pointer;
+    }
+
+    .delete svg {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    
+    .checkmark:hover {
+        fill: #0CC6A2;
+        cursor: pointer;
+    }
+    
+    .checkmark svg {
+        width: 100%;
+        height: 100%;
+    }
+
+        .AddItem {
+            width: 1.25rem; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            }
+        
+            .AddItem:hover {
+                fill: #0CC6A2;
+            }
+        
+            .AddItem svg {
+                width: 100%;
+                height: 100%;
+            }
+
+
+
+
+        .ToInput {
+            border: none;
+            background-color: transparent;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #000000;
+            outline: none;
+        }
+
+        .InForms {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            overflow: visible;
+            }
+        
+        .delete svg, .checkmark svg {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        }
